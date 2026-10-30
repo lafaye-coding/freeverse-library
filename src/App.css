@@ -1,0 +1,106 @@
+
+/* FreeVerse Library
+   Purple, pink and teal theme - edit the variables below to retune it. */
+
+:root {
+  --bg: #f6e9ff;
+  --paper: #fff8fe;
+  --text: #35093f;
+  --muted: #7b2d8e;
+  --primary: #9d1bb8;
+  --pink: #e5328f;
+  --teal: #00b3a7;
+  --border: #ddb8f2;
+  --accent: #fbe0f1;
+  --button: #d6248f;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(160deg, var(--bg) 0%, #ffe6f6 48%, #ddfbf7 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  line-height: 1.5;
+}
+button, input { font: inherit; }
+button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+::selection { background: var(--pink); color: #fff; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+.site-header, main, .site-footer { max-width: 1200px; margin: 0 auto; padding: 20px 24px; }
+.site-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 2px solid var(--border); }
+.brand {
+  font-size: 1.4rem; font-weight: 800; text-decoration: none;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--pink) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.main-nav { display: flex; gap: 12px; }
+.main-nav button { padding: 10px 14px; background: none; border: 0; border-radius: 8px; color: var(--primary); font-weight: 600; }
+.main-nav button:last-child { color: var(--pink); }
+.main-nav button:hover, .genre:hover, .genre.active, .secondary-button:hover { background: var(--accent); }
+.site-footer { border-top: 2px solid var(--border); text-align: center; color: var(--muted); }
+.site-footer a { color: var(--pink); font-weight: 700; }
+
+.welcome-section { padding: 56px 0; text-align: center; }
+.welcome-section h1 {
+  max-width: 720px; margin: 12px auto; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.1;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--pink) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.eyebrow { color: var(--pink); font-weight: 800; letter-spacing: 0.12em; }
+.welcome-section p:not(.eyebrow) { color: var(--muted); }
+.search-form { display: flex; flex-wrap: wrap; gap: 10px; max-width: 620px; margin: 28px auto 0; }
+.search-form input { flex: 1; min-width: 200px; padding: 14px 16px; border: 2px solid var(--border); border-radius: 14px; background: #fff; color: var(--text); }
+.search-form input::placeholder { color: #a06bb5; }
+.search-form input:focus { border-color: var(--pink); outline: none; }
+
+.search-form button, .primary-button, .load-more-button, .secondary-button {
+  display: inline-flex; justify-content: center; padding: 12px 18px;
+  border: 2px solid var(--button); border-radius: 14px;
+  background: var(--button); color: #fff; text-decoration: none; font-weight: 700;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.search-form button:hover, .primary-button:hover { background: var(--primary); border-color: var(--primary); }
+.secondary-button { border-color: var(--border); background: #fff; color: var(--primary); }
+.secondary-button:hover { border-color: var(--pink); }
+.load-more-button { display: flex; margin: 30px auto 0; background: var(--teal); border-color: var(--teal); }
+.load-more-button:hover { background: var(--primary); border-color: var(--primary); }
+.load-more-button:disabled { cursor: wait; opacity: 0.6; }
+
+.genre-section, .catalog-section { margin-top: 32px; }
+.genre-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.genre { padding: 9px 15px; border: 2px solid var(--border); border-radius: 999px; background: #fff; color: var(--muted); font-weight: 600; }
+.genre:hover { border-color: var(--pink); color: var(--pink); }
+.genre.active { border-color: var(--primary); background: var(--primary); color: #fff; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+.section-heading h2 { margin: 0; color: var(--primary); }
+.section-heading span, .book-meta, .book-author, .unavailable-note { color: var(--muted); font-size: 0.9rem; }
+
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+.book-card { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 16px; background: var(--paper); box-shadow: 0 12px 30px -22px rgb(157 27 184 / 45%); }
+.book-cover { display: block; width: 100%; height: 220px; object-fit: contain; background: linear-gradient(160deg, #e6d4ff, #ffd9ec 55%, #c8f8f3); }
+.cover-placeholder { display: grid; place-items: center; color: var(--muted); text-align: center; font-weight: 600; }
+.book-card-content { display: flex; flex-direction: column; gap: 9px; padding: 14px; }
+.book-card-content h3 { margin: 0; font-size: 1rem; overflow-wrap: anywhere; color: var(--primary); }
+.book-card-content p { margin: 0; }
+.download-link { text-align: center; font-size: 0.9rem; color: var(--pink); font-weight: 700; }
+
+.modal-close {
+  position: absolute; top: 10px; right: 10px; width: 40px; height: 40px;
+  border: 2px solid var(--border); border-radius: 50%; background: #fff; color: var(--primary); font-size: 1.5rem;
+}
+.modal-close:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+
+.status-message, .error-message, .empty-state { padding: 24px; text-align: center; }
+.status-message { color: var(--primary); font-weight: 600; }
+.error-message { color: #b0135a; background: #ffe3f1; border: 1px solid #f7b3d3; border-radius: 12px; }
+.empty-state h3 { color: var(--primary); }
+
+.modal-backdrop { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; overflow-y: auto; padding: 20px; background: rgb(53 9 63 / 60%); }
+.book-modal { position: relative; width: min(100%, 560px); max-height: 90vh; overflow-y: auto; padding: 28px; border: 2px solid var(--border); border-radius: 16px; background: var(--paper); box-shadow: 0 24px 60px -30px rgb(53 9 63 / 70%); }
+.book-modal h2 { overflow-wrap: anywhere; color: var(--primary); }
+.book-modal .primary-button, .book-modal .secondary-button { margin: 6px 8px 6px 0; }
+.modal-cover { display: block; max-width: 160px; max-height: 220px; object-fit: contain; }
